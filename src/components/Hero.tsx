@@ -35,15 +35,15 @@ export default function Hero() {
       {/* --- LEVEL MAP STRUCTURING --- */}
       
       {/* Target: Tier 4 (Top, Flat) */}
-      <div ref={p4Ref} className="absolute top-[80px] left-1/2 -translate-x-1/2 bg-black/80 px-12 py-6 rounded-lg whitespace-nowrap z-10 border-t-4 border-[#32CD32] shadow-[0_0_20px_rgba(50,205,50,0.15)]">
-         <h1 className="text-5xl font-extrabold tracking-tight">Hi, I'm <span className="text-[#32CD32] drop-shadow-[0_0_10px_#32CD32]">ALVI SYAHRIL</span></h1>
+      <div ref={p4Ref} className="absolute top-[80px] left-1/2 -translate-x-1/2 bg-hero-base px-12 py-6 rounded-lg whitespace-nowrap z-10 border-t-4 border-electric-blue shadow-lg">
+         <h1 className="text-5xl font-extrabold tracking-tight">Hi, I'm <span className="text-electric-blue drop-shadow-md">ALVI SYAHRIL</span></h1>
       </div>
 
 
 
       {/* Tier 3 (Sloped Counter-Clockwise: Bottom-Left to Top-Right) */}
-      <div ref={p3Ref} className="absolute top-[280px] w-[75%] right-[-5%] bg-black/70 p-6 rounded-l-2xl border-t-4 border-[#32CD32]/60 z-10 shadow-xl" style={{ transform: 'rotate(-4deg)' }}>
-         <p className="text-xl md:text-2xl text-white/90 font-mono pl-10 max-w-xl">
+      <div ref={p3Ref} className="absolute top-[280px] w-[75%] right-[-5%] bg-hero-mid p-6 rounded-l-2xl border-t-4 border-electric-blue/60 z-10 shadow-xl" style={{ transform: 'rotate(-4deg)' }}>
+         <p className="text-xl md:text-2xl font-mono pl-10 max-w-xl text-hero-text">
            A Senior Full-Stack Architect crafting <span className="text-emerald-accent">intelligent scalable systems</span>.
          </p>
       </div>
@@ -51,8 +51,8 @@ export default function Hero() {
 
 
       {/* Tier 2 (Sloped Clockwise: Bottom-Right to Top-Left) */}
-      <div ref={p2Ref} className="absolute top-[480px] w-[80%] left-[-5%] bg-black/70 p-8 rounded-r-2xl border-t-4 border-[#32CD32]/40 z-10 flex gap-6 pl-16 shadow-xl" style={{ transform: 'rotate(4deg)' }}>
-         <button className="px-8 py-3 bg-[#32CD32] text-black font-bold text-lg rounded shadow-[0_0_15px_#32CD32] hover:bg-[#a9ff1c] transition-colors">
+      <div ref={p2Ref} className="absolute top-[480px] w-[80%] left-[-5%] bg-hero-mid p-8 rounded-r-2xl border-t-4 border-electric-blue/40 z-10 flex gap-6 pl-16 shadow-xl" style={{ transform: 'rotate(4deg)' }}>
+         <button className="px-8 py-3 bg-electric-blue text-white font-bold text-lg rounded shadow-lg hover:opacity-90 transition-all">
            Explore My Work
          </button>
 
@@ -79,7 +79,7 @@ export default function Hero() {
                    href="https://mail.google.com/mail/u/0/"
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="flex items-center gap-2 bg-black border border-[#32CD32]/50 text-[#32CD32] text-sm font-mono px-4 py-2 rounded-xl shadow-[0_0_12px_rgba(50,205,50,0.25)] hover:bg-gray-950 hover:border-[#32CD32] hover:shadow-[0_0_18px_rgba(50,205,50,0.4)] transition-all cursor-pointer"
+                   className="flex items-center gap-2 bg-hero-base border border-electric-blue/50 text-electric-blue text-sm font-mono px-4 py-2 rounded-xl shadow-lg hover:opacity-90 transition-all cursor-pointer"
                  >
                    <Mail size={14} />
                    alfis1755@gmail.com
@@ -95,17 +95,17 @@ export default function Hero() {
 
 
       {/* Tier 1 (Floor) (Sloped Counter-Clockwise: Bottom-Left to Top-Right) */}
-      <div ref={p1Ref} className="absolute top-[720px] w-[110%] left-[-5%] bg-gray-900/90 p-8 border-t-8 border-sky-700 z-10 flex justify-center gap-16 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]" style={{ transform: 'rotate(-2deg)' }}>
+      <div ref={p1Ref} className="absolute top-[720px] w-[110%] left-[-5%] bg-hero-floor p-8 border-t-8 border-sky-700 z-10 flex justify-center gap-16 shadow-2xl" style={{ transform: 'rotate(-2deg)' }}>
          <div className="flex flex-col items-center gap-2">
-            <Terminal size={32} className="text-[#F92672]" />
+            <Terminal size={32} className="text-pink-500" />
             <span className="text-md font-mono text-gray-400 uppercase tracking-widest">Frontend</span>
          </div>
          <div className="flex flex-col items-center gap-2">
-            <Code size={32} className="text-[#A6E22E]" />
+            <Code size={32} className="text-electric-blue" />
             <span className="text-md font-mono text-gray-400 uppercase tracking-widest">Backend</span>
          </div>
          <div className="flex flex-col items-center gap-2">
-            <Database size={32} className="text-[#FD971F]" />
+            <Database size={32} className="text-amber-500" />
             <span className="text-md font-mono text-gray-400 uppercase tracking-widest">Database</span>
          </div>
       </div>

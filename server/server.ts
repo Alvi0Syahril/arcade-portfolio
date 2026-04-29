@@ -89,6 +89,13 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`🛡️  SECURITY STANDARD ACTIVE | Server running on port ${PORT}`);
-});
+// Export for Vercel Serverless
+export default app;
+
+// Only start the local listener if we're not running as a function
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`🛡️  SECURITY STANDARD ACTIVE | Server running on port ${PORT}`);
+    });
+}
+

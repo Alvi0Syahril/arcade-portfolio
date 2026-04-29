@@ -1,8 +1,9 @@
-CREATE DATABASE IF NOT EXISTS portfolio_db;
-USE portfolio_db;
+-- Database creation should be handled outside this script for PostgreSQL
+-- CREATE DATABASE portfolio_db;
+-- \c portfolio_db;
 
 CREATE TABLE IF NOT EXISTS projects (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     tech_stack VARCHAR(255),
@@ -12,14 +13,14 @@ CREATE TABLE IF NOT EXISTS projects (
 );
 
 CREATE TABLE IF NOT EXISTS skills (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     category VARCHAR(100),
     proficiency_level VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS experience (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     role VARCHAR(255) NOT NULL,
     company VARCHAR(255) NOT NULL,
     duration VARCHAR(100),
@@ -27,7 +28,7 @@ CREATE TABLE IF NOT EXISTS experience (
 );
 
 CREATE TABLE IF NOT EXISTS ai_logs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     user_query TEXT NOT NULL,
     generated_sql TEXT,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP

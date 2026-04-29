@@ -84,14 +84,14 @@ export default function AIChat() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="glass-panel overflow-hidden border-[#32CD32]/30"
+      className="glass-panel overflow-hidden border-electric-blue/30"
     >
       {/* Header */}
-      <div className="bg-black p-4 border-b border-[#32CD32]/20 flex items-center space-x-3">
-        <Bot className="text-[#32CD32]" />
+      <div className="bg-hero-base p-4 border-b border-electric-blue/20 flex items-center space-x-3">
+        <Bot className="text-electric-blue" />
         <div>
-          <h2 className="text-xl font-bold text-[#32CD32]">Intelligent Data Layer</h2>
-          <p className="text-xs text-[#32CD32]/60">Portfolio DB + General AI</p>
+          <h2 className="text-xl font-bold text-electric-blue">Intelligent Data Layer</h2>
+          <p className="text-xs text-electric-blue/60">Portfolio DB + General AI</p>
         </div>
       </div>
 
@@ -110,8 +110,8 @@ export default function AIChat() {
 
             {/* Bubble */}
             <div className={`max-w-[82%] rounded-2xl p-4 space-y-3 ${msg.sender === 'user'
-              ? 'bg-emerald-accent/20 text-emerald-100 rounded-tr-none'
-              : 'bg-dark-bg border border-gray-700 rounded-tl-none'}`}
+              ? 'bg-electric-blue/20 text-electric-blue rounded-tr-none'
+              : 'bg-hero-base border border-hero-mid rounded-tl-none text-hero-text'}`}
             >
               {/* Source badge */}
               {msg.sender === 'ai' && !msg.isError && msg.id !== 'welcome' && msg.type && (
@@ -130,9 +130,9 @@ export default function AIChat() {
 
               {/* SQL Table Results */}
               {msg.type === 'table' && msg.data && Array.isArray(msg.data) && msg.data.length > 0 && (
-                <div className="mt-3 overflow-x-auto rounded-lg border border-gray-800">
-                  <table className="w-full text-left text-sm text-gray-400">
-                    <thead className="text-xs text-gray-300 uppercase bg-gray-800">
+                <div className="mt-3 overflow-x-auto rounded-lg border border-hero-mid">
+                  <table className="w-full text-left text-sm text-hero-text">
+                    <thead className="text-xs uppercase bg-hero-base/80">
                       <tr>
                         {Object.keys(msg.data[0]).map(key => (
                           <th key={key} className="px-4 py-2">{key.replace(/_/g, ' ')}</th>
@@ -141,9 +141,9 @@ export default function AIChat() {
                     </thead>
                     <tbody>
                       {msg.data.map((row, i) => (
-                        <tr key={i} className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors">
+                        <tr key={i} className="border-b border-hero-mid hover:bg-hero-mid/30 transition-colors">
                           {Object.values(row).map((val: any, j) => (
-                            <td key={j} className="px-4 py-2 text-gray-300">
+                            <td key={j} className="px-4 py-2">
                               {typeof val === 'object' ? JSON.stringify(val) : String(val)}
                             </td>
                           ))}
@@ -176,7 +176,7 @@ export default function AIChat() {
               <div className="bg-electric-blue/20 p-2 rounded-full h-10 w-10 flex items-center justify-center shrink-0">
                 <Bot className="text-electric-blue" size={20} />
               </div>
-              <div className="bg-dark-bg border border-gray-700 rounded-2xl p-4 rounded-tl-none flex items-center space-x-2">
+              <div className="bg-hero-base border border-hero-mid rounded-2xl p-4 rounded-tl-none flex items-center space-x-2">
                 <div className="w-2 h-2 bg-electric-blue rounded-full animate-bounce" />
                 <div className="w-2 h-2 bg-electric-blue rounded-full animate-bounce [animation-delay:0.2s]" />
                 <div className="w-2 h-2 bg-electric-blue rounded-full animate-bounce [animation-delay:0.4s]" />
@@ -188,7 +188,7 @@ export default function AIChat() {
       </div>
 
       {/* Input */}
-      <div className="p-4 bg-dark-bg border-t border-[#32CD32]/30">
+      <div className="p-4 bg-hero-base border-t border-electric-blue/30">
         {/* Example prompts */}
         <div className="flex flex-wrap gap-2 mb-3">
           {[
@@ -200,7 +200,7 @@ export default function AIChat() {
             <button
               key={chip}
               onClick={() => setInput(chip)}
-              className="text-xs px-3 py-1.5 rounded-full border border-[#32CD32]/20 text-[#32CD32]/70 hover:bg-[#32CD32]/10 hover:border-[#32CD32]/40 transition-all"
+              className="text-xs px-3 py-1.5 rounded-full border border-electric-blue/20 text-electric-blue/80 hover:bg-electric-blue/10 hover:border-electric-blue/50 transition-all"
             >
               {chip}
             </button>
@@ -213,13 +213,13 @@ export default function AIChat() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask about my skills, projects, or anything else..."
-            className="flex-grow bg-transparent border border-[#32CD32]/30 rounded-lg px-4 py-3 focus:outline-none focus:border-[#32CD32] transition-colors text-sm"
+            className="flex-grow bg-transparent border border-electric-blue/30 rounded-lg px-4 py-3 focus:outline-none focus:border-electric-blue transition-colors text-sm text-hero-text"
             disabled={loading}
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="p-3 bg-[#32CD32] text-black rounded-xl hover:bg-[#a9ff1c] disabled:opacity-50 shadow-[0_0_10px_rgba(50,205,50,0.3)] transition-all"
+            className="p-3 bg-electric-blue text-white rounded-xl hover:opacity-90 disabled:opacity-50 shadow-lg transition-all"
           >
             <Send size={20} />
           </button>
@@ -228,3 +228,4 @@ export default function AIChat() {
     </motion.section>
   );
 }
+
